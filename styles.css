@@ -1,0 +1,127 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(253, 197, 206);
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+}
+/* Navbar Configuration */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(246, 160, 174);
+  box-shadow: 0 4px 12px rgba(1, 1, 1, 0.3);
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Logo + Header */
+#navbar-header {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  gap: 15px;
+}
+
+#navbar-logo {
+  height: 80px;
+}
+
+/* Navigation Links */
+.navbar-item-list ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item-list a {
+  text-decoration: none;
+  color: rgb(246, 160, 174);
+  background-color: whitesmoke;
+  padding: 0.7rem 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-item-list a:hover {
+  background-color: #f8d6dd;
+}
+
+/* Contact button special style */
+#contact-button a {
+  color: white;
+  background-color: rgb(246, 160, 174);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+/* --- Responsive Navbar --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-item-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(246, 160, 174);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-item-list ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .navbar-item-list.show {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Home Page Configuration */
+
+.homepage {
+  position: relative; /* needed for overlays or positioning */
+  width: 100vw;
+  height: 400px;
+  background-image: url("imgs/ChristmasCrinkleCookiePoster.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 250px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(1, 1, 1, 0.3);
+}
