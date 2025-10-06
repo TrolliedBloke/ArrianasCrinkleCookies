@@ -1,56 +1,63 @@
+/* --- Global Styles --- */
 body {
   font-family: "Poppins", sans-serif;
   background-color: rgb(253, 197, 206);
   padding: 0;
   margin: 0;
   color: whitesmoke;
+  overflow-x: hidden;
 }
-/* Navbar Configuration */
+
+/* --- Navbar Configuration --- */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(246, 160, 174);
   box-shadow: 0 4px 12px rgba(1, 1, 1, 0.3);
-  padding: 0 20px;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
   position: relative;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-/* Logo + Header */
+/* --- Logo + Header --- */
 #navbar-header {
   display: flex;
   align-items: center;
-  font-size: 30px;
-  gap: 15px;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  flex: 1;
 }
 
 #navbar-logo {
-  height: 80px;
+  height: clamp(50px, 6vw, 80px);
 }
 
-/* Navigation Links */
+/* --- Navigation Links --- */
 .navbar-item-list ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: clamp(0.8rem, 4vw, 2rem);
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar-item-list a {
   text-decoration: none;
   color: rgb(246, 160, 174);
   background-color: whitesmoke;
-  padding: 0.7rem 1rem;
+  padding: clamp(0.5rem, 1vw, 0.7rem) clamp(0.8rem, 2vw, 1rem);
   border-radius: 20px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-item-list a:hover {
   background-color: #f8d6dd;
+  transform: translateY(-3px);
 }
 
-/* Contact button special style */
+/* --- Contact button special style --- */
 #contact-button a {
   color: white;
   background-color: rgb(246, 160, 174);
@@ -58,7 +65,7 @@ body {
     0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.25);
 }
 
-/* Hamburger Button */
+/* --- Hamburger Button --- */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -66,9 +73,14 @@ body {
   border: none;
   color: whitesmoke;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* --- Responsive Navbar --- */
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* --- Responsive Navbar (Mobile) --- */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -87,7 +99,7 @@ body {
   .navbar-item-list ul {
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 1.5rem;
     padding: 20px 0;
   }
 
@@ -108,12 +120,11 @@ body {
   }
 }
 
-/* Home Page Configuration */
-
+/* --- Homepage Configuration --- */
 .homepage {
-  position: relative; /* needed for overlays or positioning */
-  width: 100vw;
-  height: 400px;
+  position: relative;
+  width: 100%;
+  height: clamp(250px, 40vw, 400px);
   background-image: url("imgs/ChristmasCrinkleCookiePoster.jpg");
   background-size: cover;
   background-position: center;
@@ -121,7 +132,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin-top: 250px;
+  margin-top: clamp(100px, 15vw, 250px);
   text-align: center;
   box-shadow: 0 4px 12px rgba(1, 1, 1, 0.3);
+  border-radius: 10px;
 }
