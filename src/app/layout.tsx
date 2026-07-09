@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import SiteNav from "@/lib/SiteNav";
+import SiteFooter from "@/lib/SiteFooter";
+import FloatingHeartsBackground from "@/lib/Floatingheartsbackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,17 +31,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <nav className="flex items-center justify-between px-8 py-4 bg-pink-300 text-white shadow-xl">
-          <span className="font-bold text-2xl">
-            Arriana&#39;s Crinkle Cookies
-          </span>
-          <div className="flex gap-6 text-md font-semibold">
-            <Link href="/">Home</Link>
-            <Link href="/order">Order</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-        </nav>
-        {children}
+        <SiteNav />
+        <FloatingHeartsBackground>
+          <main className="flex-1">{children}</main>
+        </FloatingHeartsBackground>
+        <SiteFooter />
       </body>
     </html>
   );

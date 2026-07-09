@@ -35,7 +35,7 @@ export default function FloatingHeartsBackground({
 }) {
   return (
     <div
-      className="relative w-full min-h-screen overflow-hidden"
+      className="relative w-full flex-1 overflow-hidden"
       style={{
         background:
           "linear-gradient(160deg, #ffe4ec 0%, #ffc2d4 40%, #ffb3c6 100%)",
